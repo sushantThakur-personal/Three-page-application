@@ -29,8 +29,8 @@ class AddBlog extends React.Component {
             />
           </div>
           <div className="field ">
-            <button type="submit" className="ui primary button inverted">
-              submit
+            <button type="submit" className="ui violet button" style={{ width: "100%" }}>
+              SUBMIT
             </button>
           </div>
 
