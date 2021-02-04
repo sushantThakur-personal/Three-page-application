@@ -13,11 +13,13 @@ class AddBlog extends React.Component {
   };
   render() {
     return (
-      <div className="ui segment">
-        <form className="ui form" onSubmit={this.handleSubmit}>
+      <div className="ui segment inverted " id="form-div">
+        <form className="ui form main-form-div" onSubmit={this.handleSubmit}>
+
           <div className="field">
-            <div className="ui pointing below label">Add a funny Question</div>
+            <div className="ui pointing below label" style={{ backgroundColor: "#474747", color: "white" }}>Add a funny Question</div>
             <textarea
+              id="dark-mode"
               name="question"
               value={this.state.question}
               onChange={(event) =>
@@ -27,10 +29,14 @@ class AddBlog extends React.Component {
             />
           </div>
           <div className="field ">
-            <button type="submit" className="ui primary button">
+            <button type="submit" className="ui primary button inverted">
               submit
             </button>
           </div>
+
+
+
+
         </form>
       </div>
     );
