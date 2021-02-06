@@ -1,4 +1,5 @@
 import React from "react";
+import UserComment from "./UserComment";
 
 import AddBlog from "./AddBlog";
 import '../styles/App.css'
@@ -8,7 +9,15 @@ class App extends React.Component {
     console.log(questionState);
   };
   render() {
-    return <AddBlog onSubmit={this.handleSubmit} />;
+    return (
+      <div>
+        <UserComment
+        />
+        < AddBlog onSubmit={this.handleSubmit} />
+
+      </div>
+
+    );
   }
 }
 
