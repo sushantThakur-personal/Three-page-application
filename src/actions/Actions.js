@@ -32,7 +32,7 @@ export const addUser = (formValues) => async (dispatch) => {
   history.push("/");
 };
 export const getUser = (formValues) => async (dispatch) => {
-  const response = await QuestionApi.post("/user", { ...formValues });
+  const response = await QuestionApi.get("/user", { ...formValues });
   dispatch({
     type: GET_USER,
     payload: response.data,

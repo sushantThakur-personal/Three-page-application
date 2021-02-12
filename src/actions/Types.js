@@ -9,3 +9,4 @@ export const DELETE_COMMENT = "DELETE_COMMENT";
 export const UPDATE_COMMENT = "UPDATE_COMMENT";
 export const ADD_LIKE = "ADD_LIKE";
 export const GET_USER = "GET_USER";
+export const GET_COMMENTS = "GET_COMMENTS";

@@ -19,10 +19,11 @@ const App = (props) => {
   //     user: "",
   //   };
   // }
-  const [state, dispatch] = useReducer(UserReducer, { user: "" });
+  const [users, dispatch] = useReducer(UserReducer, { user: "" });
   return (
     <div>
       <UserComment />
+      {users}
       {/* <AddBlog onSubmit={this.handleSubmit} /> */}
       <AddUser onSubmit={HandleSubmit} />
     </div>
