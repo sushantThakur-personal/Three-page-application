@@ -1,6 +1,5 @@
 const express = require("express");
-const cors = require("cors");
-const questionRoutes = require("./routes/questionRoutes");
+
 const mongoose = require("mongoose");
 const port = 8080;
 const app = express();
@@ -21,7 +20,6 @@ const commentRoutes = require("./routes/CommentRoutes");
 //=====================importing routers=================
 
 app.use(express.json());
-
 app.use("/user", userRoutes);
 app.use("/question", questionRoutes);
 app.use("/comment", commentRoutes);

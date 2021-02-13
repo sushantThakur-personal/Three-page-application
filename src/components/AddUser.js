@@ -1,5 +1,7 @@
 import React from "react";
-import { ADD_USER } from "../actions/Types";
+// import { ADD_USER } from "../actions/Types";
+
+import { addUser } from "../actions/Actions";
 
 class AddUser extends React.Component {
   constructor(props) {
@@ -12,7 +14,8 @@ class AddUser extends React.Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state);
+    const response = addUser(this.state);
+    this.props.onSubmit(response);
   };
   render() {
     return (

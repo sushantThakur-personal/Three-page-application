@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const cors = require("cors");
 
 //===========================importing models=========================================================================================
 
 const user = require("../models/Users");
 
 //===========================importing models=========================================================================================
-
+router.use(cors());
 router.get("/", async (req, res) => {
   try {
     const users = await user.find();
@@ -17,13 +18,15 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const user = new user({
-    name: req.body.name,
+  const newUser = new user({
+    name: req.body.userName,
     password: req.body.password,
     contact: req.body.contact,
   });
+  console.log(newUser);
+
   try {
-    const newUser = await user.save();
+    const saveData = await newUser.save();
     res.status(201).json(newUser);
   } catch (err) {
     res.status(500).json({ message: err.message });

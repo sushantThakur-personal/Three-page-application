@@ -2,16 +2,11 @@ import React, { useReducer } from "react";
 
 import AddUser from "./AddUser";
 import UserComment from "./UserComment";
-import { addUser } from "../actions/Actions";
 import { UserReducer } from "../reducers/CombinedReducer";
 
 import AddBlog from "./AddBlog";
 import "../styles/App.css";
 
-function HandleSubmit(questionState) {
-  const response = addUser(questionState);
-  console.log(response);
-}
 const App = (props) => {
   // constructor(props) {
   //   super(props);
@@ -19,13 +14,14 @@ const App = (props) => {
   //     user: "",
   //   };
   // }
-  const [users, dispatch] = useReducer(UserReducer, { user: "" });
+  const [users, dispatch] = useReducer(UserReducer, {});
+  console.log(users);
   return (
     <div>
       <UserComment />
-      {users}
+      {/* {users} */}
       {/* <AddBlog onSubmit={this.handleSubmit} /> */}
-      <AddUser onSubmit={HandleSubmit} />
+      <AddUser onSubmit={dispatch} />
     </div>
   );
 };
