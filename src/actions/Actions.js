@@ -23,6 +23,8 @@ export const addQuestion = (formValues) => async (dispatch) => {
   });
   history.push("/");
 };
+
+
 export const addUser = async (formValues) => {
   const response = await QuestionApi.post("/user/", { ...formValues });
   console.log(formValues);
@@ -31,6 +33,8 @@ export const addUser = async (formValues) => {
     payload: response.data,
   };
 };
+
+
 export const getUser = (formValues) => async (dispatch) => {
   const response = await QuestionApi.get("/user", { ...formValues });
   dispatch({
