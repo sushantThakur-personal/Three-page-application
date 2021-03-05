@@ -15,25 +15,21 @@ import {
 
 import QuestionApi from "../api/QuestionApi";
 
-export const addQuestion = (formValues) => async (dispatch) => {
+export const addQuestion = async (formValues) => {
   const response = await QuestionApi.post("/question", { ...formValues });
-  dispatch({
+  return {
     type: ADD_QUESTION,
     payload: response.data,
-  });
-  history.push("/");
+  };
 };
-
 
 export const addUser = async (formValues) => {
   const response = await QuestionApi.post("/user/", { ...formValues });
-  console.log(formValues);
   return {
     type: ADD_USER,
     payload: response.data,
   };
 };
-
 
 export const getUser = (formValues) => async (dispatch) => {
   const response = await QuestionApi.get("/user", { ...formValues });

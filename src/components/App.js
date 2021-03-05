@@ -14,14 +14,13 @@ const App = (props) => {
   //     user: "",
   //   };
   // }
-  const [users, dispatch] = useReducer(UserReducer, {});
+  const [users, dispatchUser] = useReducer(UserReducer, {});
   console.log(users);
   return (
     <div style={{ display: "flex" }}>
-
       {/* {users} */}
-      {/* <AddBlog onSubmit={this.handleSubmit} /> */}
-      <AddUser onSubmit={dispatch} />
+      {/* <AddBlog onSubmit={dispatch} /> */}
+      <AddUser onSubmit={dispatchUser} />
       <UserComment />
     </div>
   );
