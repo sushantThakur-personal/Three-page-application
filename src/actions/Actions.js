@@ -26,12 +26,14 @@ export const addQuestion = async (formValues) => {
 };
 
 export const updateQuestion = async (formValues) => {
-  const response = await QuestionApi.patch(`/question/${formValues.id}`, { ...formValues });
+  const response = await QuestionApi.patch(`/question/${formValues.id}`, {
+    ...formValues,
+  });
   return {
     type: UPDATE_QUESTION,
     payload: response.data,
   };
-}
+};
 
 export const deleteQuestion = async (id) => {
   const response = await QuestionApi.delete(`/question/${id}`);
@@ -39,7 +41,7 @@ export const deleteQuestion = async (id) => {
     type: DELETE_QUESTION,
     payload: response.data,
   };
-}
+};
 
 export const getQuestion = async (id) => {
   const response = await QuestionApi.get(`/question/${id}`);
@@ -47,7 +49,7 @@ export const getQuestion = async (id) => {
     type: GET_QUESTION,
     payload: response.data,
   };
-}
+};
 
 export const getQuestions = async () => {
   const response = await QuestionApi.get(`/question/`);
@@ -55,9 +57,7 @@ export const getQuestions = async () => {
     type: GET_QUESTIONS,
     payload: response.data,
   };
-}
-
-
+};
 
 export const addUser = async (formValues) => {
   const response = await QuestionApi.post("/user/", { ...formValues });

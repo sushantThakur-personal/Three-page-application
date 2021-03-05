@@ -25,6 +25,8 @@ export const UserReducer = (users, action) => {
       return users;
     case DELETE_USER:
       return users;
+    default:
+      return users;
   }
 };
 export const commentReducer = (comments, action) => {
@@ -37,9 +39,10 @@ export const commentReducer = (comments, action) => {
       return comments;
     case UPDATE_COMMENT:
       return comments;
+    default:
+      return comments;
   }
 };
-
 
 export const questionReducer = (questions, action) => {
   switch (action.type) {
@@ -53,5 +56,7 @@ export const questionReducer = (questions, action) => {
       return questions;
     case GET_QUESTIONS:
       return { ...questions, [action.payload.id]: action.payload };
+    default:
+      return questions;
   }
 };
