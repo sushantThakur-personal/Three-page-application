@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 
 import AddUser from "./AddUser";
 import UserComment from "./UserComment";
-import { UserReducer } from "../reducers/CombinedReducer";
+import { UserReducer, questionReducer } from "../reducers/CombinedReducer";
 
 import AddBlog from "./AddBlog";
 import "../styles/App.css";
@@ -15,11 +15,14 @@ const App = (props) => {
   //   };
   // }
   const [users, dispatchUser] = useReducer(UserReducer, {});
+  const [questions, dispatchQuestion] = useReducer(questionReducer, {});
+
   console.log(users);
+  console.log(questions);
   return (
     <div style={{ display: "flex" }}>
       {/* {users} */}
-      {/* <AddBlog onSubmit={dispatch} /> */}
+      <AddBlog onSubmit={dispatchQuestion} />
       <AddUser onSubmit={dispatchUser} />
       <UserComment />
     </div>

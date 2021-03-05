@@ -10,3 +10,5 @@ export const UPDATE_COMMENT = "UPDATE_COMMENT";
 export const ADD_LIKE = "ADD_LIKE";
 export const GET_USER = "GET_USER";
 export const GET_COMMENTS = "GET_COMMENTS";
+export const GET_QUESTION = "GET_QUESTION";
+export const GET_QUESTIONS = "GET_QUESTIONS";

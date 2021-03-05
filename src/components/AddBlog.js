@@ -1,15 +1,18 @@
 import React from "react";
+import { addQuestion } from "../actions/Actions";
 
 class AddBlog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       question: "",
+      user: "Abhishek"
     };
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state);
+    const response = addQuestion(this.state);
+    this.props.onSubmit(response);
   };
   render() {
     return (

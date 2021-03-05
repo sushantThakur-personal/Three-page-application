@@ -1,5 +1,7 @@
 import {
   ADD_QUESTION,
+  GET_QUESTION,
+  GET_QUESTIONS,
   UPDATE_QUESTION,
   DELETE_QUESTION,
   ADD_USER,
@@ -13,27 +15,43 @@ import {
   GET_COMMENTS,
 } from "../actions/Types";
 
-export const UserReducer = (state, action) => {
+export const UserReducer = (users, action) => {
   switch (action.type) {
     case ADD_USER:
-      return state;
+      return users;
     case GET_USER:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...users, [action.payload.id]: action.payload };
     case UPDATE_USER:
-      return state;
+      return users;
     case DELETE_USER:
-      return state;
+      return users;
   }
 };
-export const commentReducer = (state, action) => {
+export const commentReducer = (comments, action) => {
   switch (action.type) {
     case ADD_COMMENT:
-      return state;
+      return comments;
     case GET_COMMENTS:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...comments, [action.payload.id]: action.payload };
     case DELETE_COMMENT:
-      return state;
+      return comments;
     case UPDATE_COMMENT:
-      return state;
+      return comments;
+  }
+};
+
+
+export const questionReducer = (questions, action) => {
+  switch (action.type) {
+    case ADD_QUESTION:
+      return questions;
+    case GET_QUESTION:
+      return { ...questions, [action.payload.id]: action.payload };
+    case UPDATE_QUESTION:
+      return questions;
+    case DELETE_QUESTION:
+      return questions;
+    case GET_QUESTIONS:
+      return { ...questions, [action.payload.id]: action.payload };
   }
 };
