@@ -1,12 +1,12 @@
 import React, { useReducer } from "react";
 
-//=======================================================Local Dependencies=========================================================
+//=======================================================Local Dependencies==========================================================
 import AddUser from "./AddUser";
 import UserComment from "./UserComment";
 import { UserReducer, questionReducer } from "../reducers/CombinedReducer";
 import AddBlog from "./AddBlog";
 
-//=======================================================Defining Hooks=============================================================
+//=======================================================Defining Hooks==============================================================
 const [users, dispatchUser] = useReducer(UserReducer, {});
 const [questions, dispatchQuestion] = useReducer(questionReducer, {});
 
