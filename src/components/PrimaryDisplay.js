@@ -7,14 +7,15 @@ import { UserReducer, questionReducer } from "../reducers/CombinedReducer";
 import AddBlog from "./AddBlog";
 
 //=======================================================Defining Hooks==============================================================
-const [users, dispatchUser] = useReducer(UserReducer, {});
-const [questions, dispatchQuestion] = useReducer(questionReducer, {});
+
 
 //========================================================Component definition========================================================
 
 const PrimaryDisplay = (props) => {
-  console.log(users);
-  console.log(questions);
+  // console.log(users);
+  // console.log(questions);
+  const [users, dispatchUser] = useReducer(UserReducer, {});
+  const [questions, dispatchQuestion] = useReducer(questionReducer, {});
   return (
     <>
       {/* {users} */}
